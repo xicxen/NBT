@@ -69,10 +69,8 @@ public class Chunk implements Iterable<Section> {
 			raw = true;
 			return;
 		}
-		CompoundTag level;
-		if ((level = data.getCompoundTag("Chunk")) == null) {
-			throw new IllegalArgumentException("data does not contain \"Chunk\" tag");
-		}
+
+		CompoundTag level = data;
 		dataVersion = data.getInt("DataVersion");
 		inhabitedTime = level.getLong("InhabitedTime");
 		lastUpdate = level.getLong("LastUpdate");
